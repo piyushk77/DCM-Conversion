@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Conversion | DCM</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="base-main">
+            <h1 class="main-heading">Report Conversion</h1>
+            <p class="main-para">Convert your text files into Excel format with ease.</p>
+
+            <label id="selectedFile" class="label-select-button" for="fileInput">Choose a text file</label>
+
+            <input type="file" id="fileInput" accept=".txt" onchange="updateFileName()">
+            <button class="convert-button" onclick="convertAndDownload()">Convert and Download</button>
+
+            <footer class="disclaimer">
+                <p>This report conversion tool is an unofficial experiment. The generated reports may contain errors or inaccuracies. Use the results at your own discretion.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script>
+        function updateFileName() {
+            const fileInput = document.getElementById("fileInput");
+            const selectedFile = document.getElementById("selectedFile");
+
+            if (fileInput.files.length > 0) {
+                selectedFile.textContent = fileInput.files[0].name;
+            } else {
+                selectedFile.textContent = "Choose a text file";
+            }
+        }
+    </script>
+</body>
+
+</html>
