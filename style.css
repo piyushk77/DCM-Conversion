@@ -93,3 +93,103 @@ footer {
     font-weight: 300;
     font-size: 1.2vw;
 }
+
+.disclaimer p {
+    line-height: 2;
+}
+
+@media screen and (min-width: 900px) and (max-width: 1350px) {
+    .main-heading {
+        font-size: 4.5vw;
+    }
+
+    .main-para {
+        font-size: 2.4vw;
+    }
+
+    .label-select-button,
+    .convert-button {
+        font-size: 1.6vw;
+    }
+
+    .disclaimer {
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 900px) {
+    .main-heading {
+        font-size: 7vw;
+    }
+
+    .main-para {
+        font-size: 3.5vw;
+    }
+
+    .label-select-button,
+    .convert-button {
+        font-size: 2.5vw;
+    }
+
+    .disclaimer {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width: 500px) {
+    .content {
+        padding: 6%;
+    }
+
+    .main-heading {
+        font-size: 8.5vw;
+    }
+
+    .main-para {
+        font-size: 4.3vw;
+    }
+
+    .label-select-button,
+    .convert-button {
+        font-size: 3.5vw;
+        display: inline-block;
+        margin-right: 0;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+
+    .disclaimer {
+        font-size: 3.8vw;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .content {
+        padding: 6%;
+    }
+
+    .main-heading {
+        font-size: 8.5vw;
+    }
+
+    .main-para {
+        font-size: 4.3vw;
+    }
+
+    .label-select-button,
+    .convert-button {
+        font-size: 3.5vw;
+        display: inline-block;
+        margin-right: 0;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+
+    .disclaimer {
+        font-size: 3.8vw;
+    }
+}
