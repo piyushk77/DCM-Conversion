@@ -19,10 +19,11 @@
             <label id="selectedFile" class="label-select-button" for="fileInput">Choose a text file</label>
 
             <input type="file" id="fileInput" accept=".txt" onchange="updateFileName()">
-            <button class="convert-button" onclick="convertAndDownload()">Convert and Download</button>
+            <button id="convert-btn" class="convert-button" onclick="convertAndDownload()">Convert and Download</button>
 
             <footer class="disclaimer">
-                <p>This report conversion tool is an unofficial application. The generated reports are highly specific and may contain errors or inaccuracies. Use the results at your own discretion.</p>
+                <p>This report conversion tool is an unofficial application. The generated reports are highly specific
+                    and may contain errors or inaccuracies. Use the results at your own discretion.</p>
             </footer>
 
         </div>
@@ -31,11 +32,22 @@
     <script src="https://cdn.jsdelivr.net/npm/exceljs/dist/exceljs.min.js"></script>
     <script src="./script.js"></script>
     <script>
-        function updateFileName() {
-            const fileInput = document.getElementById("fileInput");
-            const selectedFile = document.getElementById("selectedFile");
+        async function sendIncrementRequest() {
+            await fetch('https://dcm-conversion-monitoring.vercel.app/api/increment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
 
-            if (fileInput.files.length > 0) {
+        document.getElementById('convert-btn').addEventListener('click', sendIncrementRequest);
+
+        function updateFileName() {
+                const fileInput = document.getElementById("fileInput");
+                const selectedFile = document.getElementById("selectedFile");
+
+                if(fileInput.files.length > 0) {
                 selectedFile.textContent = fileInput.files[0].name;
             } else {
                 selectedFile.textContent = "Choose a text file";
